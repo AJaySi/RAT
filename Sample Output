@@ -1,0 +1,104 @@
+/rat_framework (master)
+$ python rat_runner.py get http://httpbin.org/get
+INFO- 2019-01-24 19:55:20 -[rat_runner.py:]- Number of arguments: 3 and Namespace(METHOD=['get'], URL=['http://httpbin.org/get'],
+json=None, record=False)
+INFO- 2019-01-24 19:55:20 -[perf_lib.py:]- Measure response time of this API: http://httpbin.org/get: get
+INFO- 2019-01-24 19:55:20 -[perf_lib.py:]- k6 Command for benchmarking: k6 run -u 2 -d 2s -e AE_URL=http://httpbin.org/get perfAE_rest/ae_perf_get.js
+
+          /\      |‾‾|  /‾‾/  /‾/
+     /\  /  \     |  |_/  /  / /
+    /  \/    \    |      |  /  ‾‾\
+   /          \   |  |‾\  \ | (_) |
+  / __________ \  |__|  \__\ \___/ .io
+
+  execution: local-
+     output: -
+     script: perfAE_rest/ae_perf_get.js
+
+    duration: 2s, iterations: -
+         vus: 2,  max: 2
+
+    done [==========================================================] 2s / 2s2
+
+    ✗ Test7: Check API usuability by list message
+     ↳  0% — ✓ 0 / ✗ 13
+    ✓ Test1: GET Response status is 200
+    ✗ Test2: HTTP protocol is HTTP/2
+     ↳  0% — ✓ 0 / ✗ 13
+    ✗ Test3: Check for the correct verb - GET
+     ↳  0% — ✓ 0 / ✗ 13
+    ✓ Test4: Check if unauthorized header present
+    ✓ Test5: Check if body size is greater than 0kb
+    ✓ Test6: Check content type is json
+
+    checks.....................: 57.14% ✓ 52  ✗ 39
+    data_received..............: 5.9 kB 2.9 kB/s
+    data_sent..................: 1.0 kB 519 B/s
+    http_req_blocked...........: avg=36.53ms  min=0s       med=0s       max=241.41ms p(90)=186.87ms p(95)=236.72ms
+    http_req_connecting........: avg=33.9ms   min=0s       med=0s       max=224.28ms p(90)=173.17ms p(95)=219.59ms
+  ✓ http_req_duration..........: avg=254.3ms  min=217.77ms med=224.87ms max=542.72ms p(90)=252.45ms p(95)=368.97ms
+    http_req_receiving.........: avg=62.53µs  min=0s       med=0s       max=813µs    p(90)=0s       p(95)=325.19µs
+    http_req_sending...........: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+    http_req_tls_handshaking...: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+    http_req_waiting...........: avg=254.23ms min=217.77ms med=224.87ms max=542.72ms p(90)=251.8ms  p(95)=368.48ms
+    http_reqs..................: 13     6.498922/s
+    iteration_duration.........: avg=291.09ms min=218.58ms med=224.87ms max=542.72ms p(90)=470.6ms  p(95)=499.45ms
+    iterations.................: 13     6.498922/s
+    vus........................: 2      min=2 max=2
+    vus_max....................: 2      min=2 max=2
+
+INFO- 2019-01-24 19:55:23 -[rest_assertions.py:]- Start test asserts on the API GET Method for URL: http://httpbin.org/get
+INFO- 2019-01-24 19:55:23 -[rest_assertions.py:]- PASS: The response code was a Success. Expected Result: 2xx
+INFO- 2019-01-24 19:55:23 -[rest_assertions.py:]- PASS: Response has OK as expected result.
+INFO- 2019-01-24 19:55:23 -[rest_assertions.py:]- Start Header response assertion testing, values taken from config file.
+ERROR- 2019-01-24 19:55:23 -[rest_assertions.py:]- FAIL: Invalid response header. Expected 'X-Frame-Options: SAMEORIGIN'.
+ Error:Header X-Frame-Options wasn't found in response headers: {'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Date':
+'Thu, 24 Jan 2019 14:25:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '230', 'Access-Control-Allow-Origin': '*',
+'Access-Control-Allow-Credentials': 'true', 'Via': '1.1 vegur'}
+
+ERROR- 2019-01-24 19:55:23 -[rest_assertions.py:]- FAIL: Invalid response header. Expected 'X-XSS-Protection: 1; mode=block'.
+ Error:Header X-XSS-Protection wasn't found in response headers: {'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Date': 'Thu, 24 Jan 2019 14:25:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '230', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Via': '1.1 vegur'}
+
+ERROR- 2019-01-24 19:55:23 -[rest_assertions.py:]- FAIL: Invalid response header. Expected 'X-Content-Type-Options: nosniff'.
+ Error:Header X-Content-Type-Options wasn't found in response headers: {'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Date': 'Thu, 24 Jan 2019 14:25:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '230', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Via': '1.1 vegur'}
+
+ERROR- 2019-01-24 19:55:23 -[rest_assertions.py:]- FAIL: Invalid response header. Expected 'Cache-Control: no-store'.
+ Error:Header Cache-Control wasn't found in response headers: {'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Date': 'Thu, 24 Jan 2019 14:25:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '230', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Via': '1.1 vegur'}
+
+ERROR- 2019-01-24 19:55:23 -[rest_assertions.py:]- FAIL: Invalid response header. Expected 'Pragma: no-cache'.
+ Error:Header Pragma wasn't found in response headers: {'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Date': 'Thu, 24
+Jan 2019 14:25:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '230', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Via': '1.1 vegur'}
+
+ERROR- 2019-01-24 19:55:23 -[rest_assertions.py:]- FAIL: Invalid response header. Expected 'User: admin'.
+ Error:Header User wasn't found in response headers: {'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Date': 'Thu, 24 Jan 2019 14:25:23 GMT', 'Content-Type': 'application/json', 'Content-Length': '230', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true', 'Via': '1.1 vegur'}
+
+INFO- 2019-01-24 19:55:23 -[rest_assertions.py:]- PASS: The header response has valid 'Content-Type: application/json' set.
+validate body
+INFO- 2019-01-24 19:55:23 -[httpie_lib.py:]- HTTP Command Used: http  --all --check-status --ignore-stdin  GET  http://httpbin.org/get  X-Requested-By:testAE_api
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: *
+Connection: keep-alive
+Content-Length: 293
+Content-Type: application/json
+Date: Thu, 24 Jan 2019 14:25:24 GMT
+Server: gunicorn/19.9.0
+Via: 1.1 vegur
+
+{
+    "args": {},
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate",
+        "Connection": "close",
+        "Host": "httpbin.org",
+        "User-Agent": "HTTPie/1.0.2",
+        "X-Requested-By": "testAE_api"
+    },
+    "origin": "223.196.31.21",
+    "url": "http://httpbin.org/get"
+}
+
+INFO- 2019-01-24 19:55:24 -[httpie_lib.py:]- Use 'main_config.ini' to add/modify the tests. Scroll-up for more info.
+INFO- 2019-01-24 19:55:24 -[httpie_lib.py:]- Convert to automated TC by rerunning the test tool with '--record' option.
+(rat_framework)
