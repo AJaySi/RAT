@@ -1,0 +1,23 @@
+Future Feature & TBDs
+Note: No Priority Order given
+Include support to bulk modify API endpoints like baseurl/IP, product and API version details.
+Provide capability for mocks(mockito). This is useful is API development and unit testing.
+Provide support for JSON schema validation.
+Provide support for basic negative testing.
+Provide capability to create JSON payloads with faker library.
+Provide Test coverage metrics.
+Provide Debugging capability.
+Providing API security testing.
+Better integration with k6.io performance tool.
+Improve test reporting, debugging & exception handling.
+Using randomly generated test data and not constants.
+Better interface than cURL for dev adopt-ability.
+Ironing out command line interface of the test tool.
+More flexibility for result matching.
+Documentation for developer self reference.
+Include negative testing capability.
+Modify option for maintenance, change baseurl, product, api versions etc.
+Evaluate httperf, Jest framework, chakram with chai.js and mocha test libraries.
+Easy to install and start testing
+Provide asynchronous, promise based testing
+"Unit" tests should be run in parallel.

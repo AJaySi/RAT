@@ -1,0 +1,17 @@
+The performance, stress and load capabilities of this tool comes from k6 javascript tool.
+This is test functional performance tests as part of the unit testing. 
+
+This is meant for unit performance testing for AE APIs.
+TBD: Specialized REST API performance tools like jmeter, gatling, tsung or locust should be evaluated.
+
+k6 supports all standard HTTP verbs/methods:
+CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT and TRACE.
+
+#----------------------------------------------------
+Present limitation/TBDs:
+
+1). There is a file mapping for each rest method. 
+There are 6 js files which can put in a single js file for easier manitenance.
+
+2). Many of k6 capabilities are not captured or exported by our testframework.
+As the acceptability of this tool grows, we will need add relative k6 features into this tool.

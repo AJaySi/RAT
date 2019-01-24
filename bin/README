@@ -1,0 +1,4 @@
+Contains external test tools required by the testAE framework.
+
+1). k6 tool for microbenchmarking.
+2). htttpie
